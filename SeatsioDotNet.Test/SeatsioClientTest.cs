@@ -17,6 +17,9 @@ namespace SeatsioDotNet.Test
 
         protected SeatsioClientTest()
         {
+            // set a protocol supported by the seats.io hosting provider
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             TestCompany testCompany = CreateTestCompany();
             User = testCompany.admin;
             Subaccount = testCompany.subaccount;
